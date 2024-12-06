@@ -1,0 +1,6 @@
+@use "../abstract/variable" as *;
+
+.l-container {
+  padding-block: $space-x8;
+  padding-inline: $space-x5;
+}

@@ -1,0 +1,81 @@
+@use "sass:map";
+@use "variable" as *;
+
+// Brower support prefix
+@mixin prefix($property, $value, $prefixes) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+
+  #{$property}: $value;
+}
+
+// Button variants
+$btn-variants: (
+  primary: ("bg-color": $color-bg-primary,
+    "color": $color-text-light,
+    "slide-bg": $color-bg-secondary,
+    "hover-text": $color-bg-primary,
+  ),
+  secondary: ("bg-color": $color-bg-secondary,
+    "color": $color-text-primary,
+    "slide-bg": $color-bg-primary,
+    "hover-text": $color-bg-light,
+  ),
+  outline: (border: $border-standard,
+    "color": $color-text-primary,
+    "slide-bg": $color-bg-primary,
+    "hover-text": $color-bg-light,
+  ),
+);
+
+@mixin buttonColorVariants() {
+  @each $variant, $props in $btn-variants {
+    &--#{$variant} {
+      background-color: map.get($props, "bg-color");
+      border: map.get($props, "border");
+      color: map.get($props, "color");
+
+      .btn__slide {
+        background-color: map.get($props, "slide-bg");
+      }
+
+      &:hover {
+        background-color: map.get($props, "slide-bg");
+        transition: background 0.9s ease-in;
+
+        .btn__slide {
+          transform: translateX(0);
+        }
+
+        .btn__text {
+          color: map.get($props, "hover-text");
+        }
+      }
+    }
+  }
+}
+
+// Breakpoints based on device types and screen widths
+$breakpoints: (
+  "mobile": 37.5em,
+  // Mobile (up to 600px)
+  "tablet-portrait": 48em,
+  // Tablet portrait (up to 768px)
+  "tablet-landscape": 62em,
+  // Tablet landscape (up to 992px)
+  "desktop": 73em // Desktop (up to 1170px),,
+);
+
+// Mixin to apply styles based on the selected breakpoint
+@mixin breakpoint($device) {
+  $min-width: map.get($breakpoints, $device);
+
+  @media only screen and (min-width: $min-width) {
+    @content;
+  }
+}
+
+
+// Animation 
+@mixin moving() {}

@@ -1,0 +1,41 @@
+@use "../abstract/variable" as *;
+
+.u-heading-lg {
+  font-size: $fs-h1;
+  line-height: 1.28;
+}
+
+.u-heading-md {
+  background-color: $color-bg-secondary;
+  border-radius: $radius-sm;
+  font-size: $fs-h2;
+  width: max-content;
+}
+
+.u-heading-sm {
+  font-size: $fs-h4;
+}
+
+.u-title {
+  border-radius: $radius-sm;
+  font-size: $fs-h3;
+  width: max-content;
+}
+
+
+.u-text-primary {
+  background-color: $color-bg-secondary;
+}
+
+.u-text-secondary {
+  background-color: $color-bg-light;
+}
+
+
+.u-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: $space-x8;
+  align-items: center;
+  text-align: center;
+}

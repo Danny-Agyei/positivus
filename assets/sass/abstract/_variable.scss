@@ -1,0 +1,85 @@
+// Spacing 
+$space-x1: 0.4rem;
+$space-x2: 0.8rem;
+$space-x3: 1.2rem;
+$space-x4: 1.6rem;
+$space-x5: 2.0rem;
+$space-x6: 2.4rem;
+$space-x7: 2.8rem;
+$space-x8: 3.2rem;
+$space-x9: 3.6rem;
+$space-x10: 4.0rem;
+$space-x11: 4.4rem;
+$space-x12: 4.8rem;
+$space-x13: 5.2rem;
+$space-x14: 5.6rem;
+$space-x15: 6.0rem;
+$space-x16: 6.4rem;
+$space-x17: 6.8rem;
+$space-x18: 7.2rem;
+$space-x19: 7.6rem;
+$space-x20: 8.0rem;
+$space-x21: 8.4rem;
+$space-x22: 8.8rem;
+$space-x23: 9.2rem;
+$space-x24: 9.6rem;
+$space-x25: 10.0rem;
+$space-x26: 10.4rem;
+$space-x27: 10.8rem;
+$space-x28: 11.2rem;
+$space-x29: 11.6rem;
+$space-x30: 12.0rem;
+$space-x31: 12.4rem;
+$space-x32: 12.8rem;
+$space-x33: 13.2rem;
+$space-x34: 13.6rem;
+$space-x35: 14.0rem;
+
+// Typography 
+$ff-primary: "Space Grotesk", serif;
+
+$fs-base: 0.625rem;
+$fs-h1: 4.3rem;
+$fs-h2: 3.6rem;
+$fs-h3: 2.6rem;
+$fs-h4: 1.8rem;
+$fs-body: 1.8rem;
+$fs-label: 1.6rem;
+
+
+// Colors 
+$green: #B9FF66;
+$white: #fff;
+$black: #000;
+$grey-100: #F3F3F3;
+$grey-900: #191A23;
+
+$color-text-primary: $black;
+$color-text-secondary: $green;
+$color-text-light: $white;
+
+$color-bg-primary: $grey-900;
+$color-bg-secondary: $green;
+$color-bg-light: $white;
+$color-bg-grey: $grey-100;
+
+$color-border-dark: $black;
+$color-border-grey-900: $grey-900;
+
+// Border
+$border-standard: 0.1rem solid $grey-900;
+
+$radius-circle: 999px;
+$radius-lg: 4.5rem;
+$radius-md: 1.4rem;
+$radius-sm: 0.7rem;
+
+// Box Shadow 
+$shadow-standard: 0rem 0.5rem 0rem $grey-900;
+
+// Transition & Transform 
+$transition-easein-all: all 0.25s ease-in;
+$transition-easeout-all: all 350ms ease-out;
+$cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
+
+$transition-standard: transform 0.25s $cubic, opacity 0.25s $cubic;

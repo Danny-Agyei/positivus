@@ -1,0 +1,22 @@
+@use "../abstract//mixin" as *;
+
+.l-grid {
+  display: grid;
+
+  &-col-1 {
+    @extend .l-grid;
+    grid-template-columns: 1fr;
+  }
+
+  @include breakpoint(tablet-portrait) {
+    &-md-col-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @include breakpoint(tablet-landscape) {
+    &-lg-col-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

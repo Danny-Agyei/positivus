@@ -1,0 +1,48 @@
+@use '../abstract/mixin' as *;
+
+.l-flex {
+    display: flex;
+}
+
+
+.l-flex-center {
+    @extend .l-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.l-flex-col {
+    @extend .l-flex;
+    flex-direction: column;
+}
+
+.l-flex-col-center {
+    @extend .l-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.l-flex-ac {
+    @extend .l-flex;
+    align-items: center;
+}
+
+.l-flex-jb {
+    @extend .l-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.l-flex-jb-center {
+    @extend .l-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+@include breakpoint(tablet-portrait) {
+    .l-flex-md-row {
+        flex-direction: row;
+    }
+}

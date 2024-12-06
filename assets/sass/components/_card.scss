@@ -1,0 +1,19 @@
+@use '../abstract/variable' as *;
+
+.card {
+    border: $border-standard;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-standard;
+
+    &--primary {
+        background-color: $color-bg-primary;
+    }
+
+    &--secondary {
+        background-color: $color-bg-secondary;
+    }
+
+    &--light {
+        background-color: $color-bg-grey;
+    }
+}

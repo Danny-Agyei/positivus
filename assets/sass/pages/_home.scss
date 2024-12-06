@@ -1,0 +1,141 @@
+@use '../abstract/index' as *;
+@use "../layout/index" as *;
+@use "../base/utilities" as *;
+@use "../components/index" as *;
+
+
+
+// Hero Secion 
+.hero {
+    margin-block-start: 6rem;
+
+    &__container {
+        display: grid;
+        gap: $space-x5;
+    }
+
+    &__btn {
+        width: 100%;
+        margin-block-start: 4rem;
+    }
+}
+
+// Companies Section 
+.companies {
+    overflow: hidden;
+    width: 100%;
+
+    padding-block: $space-x8;
+
+    &__list {
+        gap: $space-x5;
+    }
+
+
+    &__item {
+        gap: $space-x10;
+
+        &--1 {
+            transform: translateX(100%);
+            animation: moveLeft 20s linear infinite;
+        }
+
+        &--2 {
+            transform: translateX(-280%);
+            animation: moveRight 20s linear infinite;
+        }
+    }
+
+
+    &__img {
+        width: 100px;
+        filter: grayscale(1);
+    }
+}
+
+
+@keyframes moveLeft {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-800px);
+    }
+}
+
+@keyframes moveRight {
+    from {
+        transform: translateX(-280%);
+    }
+
+    to {
+        transform: translateX(150%);
+    }
+}
+
+
+// Services Section 
+.services {
+
+    &__list {
+        margin-block-start: $space-x10;
+        gap: $space-x8;
+    }
+
+    &__item {
+        padding: $space-x12;
+        min-height: 30.2rem;
+    }
+
+    &__content,
+    &__cover {
+        width: 50%;
+        position: relative;
+    }
+
+    &__content {
+        align-items: flex-start;
+    }
+
+    &__btn {
+        margin-block-start: auto;
+    }
+
+    &__btn-text {
+        display: none;
+    }
+
+    &__img {
+        width: 100%;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transform: scale(1.1);
+    }
+}
+
+// Proposal Section 
+.proposal {
+
+    &__content {
+        padding: $space-x12;
+    }
+
+    &__heading {
+        max-width: 100%;
+        font-size: 3rem;
+    }
+
+    &__description {
+        padding-block: $space-x5;
+    }
+
+    &__btn {
+        max-width: 100%;
+    }
+
+    &__img {
+        display: none;
+    }
+}

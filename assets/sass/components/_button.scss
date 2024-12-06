@@ -1,0 +1,70 @@
+@use "../abstract/index" as *;
+
+.btn {
+  align-items: center;
+  display: inline-flex;
+  font-size: 2rem;
+  justify-content: center;
+  @include prefix(transition, all 250ms ease, moz webkit);
+  overflow: hidden;
+  position: relative;
+
+  &__text {
+    z-index: 2;
+    @include prefix(transition, color 350ms ease-out, moz webkit);
+  }
+
+  &__slide {
+    @include prefix(transition, all 350ms ease-out, moz webkit);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    transform: translateX(-100%);
+    width: 100%;
+    z-index: 1;
+  }
+
+  @include buttonColorVariants;
+
+  &--sm {
+    padding: $space-x5 $space-x9;
+    @include prefix(border-radius, $radius-sm, moz webkit);
+  }
+
+  &--link {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &--round {
+    border-radius: $radius-circle;
+  }
+
+  &__icon {
+    align-items: center;
+    display: flex;
+    font-size: 2.5rem;
+    justify-content: center;
+    margin-inline: $space-x3 0;
+    transform: rotate(-30deg);
+
+    &--round {
+      border-radius: $radius-circle;
+      height: 4.1rem;
+      margin-inline: 0 $space-x3;
+      width: 4.1rem;
+    }
+
+    &--primary {
+      background-color: $color-bg-primary;
+      color: $color-text-secondary;
+    }
+
+    &--secondary {
+      background-color: $color-bg-light;
+      color: $color-text-primary;
+    }
+  }
+}
