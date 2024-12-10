@@ -1,0 +1,124 @@
+@use '../abstract/index' as *;
+
+.footer {
+    color: $color-text-light;
+
+    &__container {
+        padding-inline: 0;
+        padding-block-end: 0;
+    }
+
+    &__logo {
+        margin-inline: auto;
+    }
+
+    &__wrapper {
+        background-color: $color-bg-primary;
+        gap: $space-x9;
+        text-align: center;
+        padding: $space-x12 $space-x5 $space-x8;
+
+        @include breakpoint(mobile) {
+            @include prefix(border-radius, $radius-lg, moz webkit);
+        }
+    }
+
+    &__list {
+        gap: $space-x4;
+        font-size: $fs-body-sm;
+    }
+
+    &__link {
+        opacity: 1;
+        @include prefix(transition, opacity $transition-ease-2, moz webkit);
+
+        &:is(:hover, :active) {
+            opacity: 0.5;
+        }
+    }
+
+    &__nav-social {
+        grid-row: 5/5;
+    }
+
+    &__brand {
+        background-color: $color-bg-light;
+        color: $color-text-primary;
+        height: 3rem;
+        width: 3rem;
+        @include prefix(transition, all $transition-ease-1, moz webkit);
+
+        &:not(:last-child) {
+            margin-inline-end: $space-x5;
+        }
+
+        &:hover {
+            background-color: $color-bg-secondary;
+            color: $color-text-primary;
+        }
+    }
+
+    &__info {
+        font-size: $fs-body-sm;
+    }
+
+    &__contact {
+        margin-block: $space-x4;
+    }
+
+    &__tag {
+        align-self: center;
+        background-color: $color-bg-secondary;
+        @include prefix(border-radius, $radius-sm, moz webkit);
+        color: $color-text-primary;
+        font-weight: 500;
+        line-height: normal;
+        margin-block-end: $space-x8;
+        padding: $space-x2;
+        width: max-content;
+    }
+
+    &-form {
+        background-color: #292A32;
+        padding: $space-x8;
+        @include prefix(border-radius, $radius-md, moz webkit);
+    }
+
+    &__group {
+        gap: $space-x3;
+    }
+
+    &__control {
+        border-color: #fff;
+        color: $color-text-light;
+
+        &::placeholder {
+            color: $color-text-light;
+        }
+    }
+
+    &__btn {
+        width: 100%;
+
+        &:hover {
+            .btn__slide {
+                background-color: $color-bg-light;
+            }
+
+            .btn__text {
+                color: $color-text-primary;
+            }
+        }
+    }
+
+    &__tc {
+        font-size: $fs-body-sm;
+        gap: $space-x4;
+    }
+
+    &__seperator {
+        border-color: #fff;
+    }
+
+
+}

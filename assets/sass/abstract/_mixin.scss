@@ -35,14 +35,14 @@ $btn-variants: (
       background-color: map.get($props, "bg-color");
       border: map.get($props, "border");
       color: map.get($props, "color");
+      @include prefix(transition, background 0.6s ease-in, moz webkit);
 
       .btn__slide {
         background-color: map.get($props, "slide-bg");
       }
 
+
       &:hover {
-        background-color: map.get($props, "slide-bg");
-        transition: background 0.9s ease-in;
 
         .btn__slide {
           transform: translateX(0);
@@ -58,8 +58,8 @@ $btn-variants: (
 
 // Breakpoints based on device types and screen widths
 $breakpoints: (
-  "mobile": 37.5em,
-  // Mobile (up to 600px)
+  "mobile": 35.9375em,
+  // Mobile (up to 575px)
   "tablet-portrait": 48em,
   // Tablet portrait (up to 768px)
   "tablet-landscape": 62em,

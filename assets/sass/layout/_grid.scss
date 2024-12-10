@@ -14,7 +14,7 @@
     }
   }
 
-  @include breakpoint(tablet-landscape) {
+  @include breakpoint(desktop) {
     &-lg-col-3 {
       grid-template-columns: repeat(3, 1fr);
     }

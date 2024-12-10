@@ -1,13 +1,11 @@
-@use '../abstract/index' as *;
+@use "../abstract/index" as *;
 @use "../layout/index" as *;
 @use "../base/utilities" as *;
 @use "../components/index" as *;
 
-
-
-// Hero Secion 
+// Hero Secion
 .hero {
-    margin-block-start: 6rem;
+    margin-block-start: $space-x22;
 
     &__container {
         display: grid;
@@ -16,11 +14,16 @@
 
     &__btn {
         width: 100%;
-        margin-block-start: 4rem;
+        margin-block-start: $space-x10;
+    }
+
+    &__img {
+        width: 100%;
+        max-width: 65rem;
     }
 }
 
-// Companies Section 
+// Companies Section
 .companies {
     overflow: hidden;
     width: 100%;
@@ -30,7 +33,6 @@
     &__list {
         gap: $space-x5;
     }
-
 
     &__item {
         gap: $space-x10;
@@ -46,13 +48,11 @@
         }
     }
 
-
     &__img {
         width: 100px;
         filter: grayscale(1);
     }
 }
-
 
 @keyframes moveLeft {
     from {
@@ -74,24 +74,21 @@
     }
 }
 
-
-// Services Section 
+// Services Section
 .services {
-
     &__list {
-        margin-block-start: $space-x10;
         gap: $space-x8;
     }
 
     &__item {
-        padding: $space-x12;
         min-height: 30.2rem;
+        padding: $space-x12;
     }
 
     &__content,
     &__cover {
-        width: 50%;
         position: relative;
+        width: 50%;
     }
 
     &__content {
@@ -107,24 +104,23 @@
     }
 
     &__img {
-        width: 100%;
+        bottom: 0;
         position: absolute;
         right: 0;
-        bottom: 0;
         transform: scale(1.1);
+        width: 100%;
     }
 }
 
-// Proposal Section 
+// Proposal Section
 .proposal {
-
     &__content {
         padding: $space-x12;
     }
 
     &__heading {
-        max-width: 100%;
         font-size: 3rem;
+        max-width: 100%;
     }
 
     &__description {
@@ -132,7 +128,231 @@
     }
 
     &__btn {
-        max-width: 100%;
+        width: 100%;
+    }
+
+    &__img {
+        display: none;
+    }
+}
+
+// Case studies
+.case {
+    &__container {
+        padding-inline: 0;
+    }
+
+    &__header {
+        padding-inline: $space-x5;
+    }
+
+    &__item {
+        background-color: $color-bg-primary;
+        color: $color-text-light;
+        @include prefix(border-radius, $radius-lg, webkit moz);
+        margin-inline: $space-x5;
+        padding: $space-x10 $space-x12;
+    }
+
+    &__link {
+        color: $color-text-secondary;
+        margin-block-start: $space-x8;
+    }
+}
+
+// Process section
+.process {
+    &__list {
+        gap: $space-x5;
+    }
+
+    &__item {
+        padding: $space-x8;
+        @include prefix(transition, background $transition-ease-1, webkit moz);
+
+        &--open {
+            background-color: $color-bg-secondary;
+
+            .process__content {
+                gap: $space-x6;
+                line-height: 1.5 !important;
+                opacity: 1;
+                padding-block-start: $space-x6;
+            }
+
+            .process__bar::before {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__header {
+        gap: $space-x6;
+    }
+
+    &__title-block {
+        gap: $space-x6;
+        width: 80%;
+    }
+
+    &__content {
+        line-height: 0;
+        opacity: 0;
+        padding-block-start: 0;
+        @include prefix(transition, all $transition-ease-1, webkit moz);
+        gap: 0;
+    }
+
+    &__number {
+        font-size: 3rem;
+    }
+
+    &__btn {
+        height: 3rem;
+        margin-inline-start: auto;
+        width: 3rem;
+
+        &:hover {
+            background-color: $color-text-light;
+        }
+    }
+
+    &__bar {
+        background-color: $color-bg-primary;
+        height: 0.3rem;
+        position: relative;
+        width: 1.5rem;
+
+        &::before {
+            background-color: $color-bg-primary;
+            bottom: 0;
+            content: "";
+            height: inherit;
+            left: 0;
+            position: absolute;
+            right: 0;
+            transform: rotate(270deg);
+            transform-origin: center center;
+            @include prefix(transition, transform $transition-ease-2, webkit moz);
+            top: 0;
+            width: inherit;
+        }
+    }
+}
+
+// Team Section
+.team {
+    &__list {
+        gap: $space-x8;
+    }
+
+    &__item {
+        gap: $space-x5;
+        padding: $space-x10 $space-x9;
+    }
+
+    &__header {
+        position: relative;
+    }
+
+    &__info {
+        align-self: flex-end;
+        font-size: 1.8rem;
+        margin-inline-start: $space-x5;
+    }
+
+    &__link {
+        background-color: $color-bg-primary;
+        color: $color-text-secondary;
+        height: 3.4rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 3.4rem;
+    }
+
+    &__btn {
+        margin-block-start: $space-x10;
+        width: 100%;
+    }
+}
+
+// Testimonials Section
+.testimonials {
+    &__wrapper {
+        background-color: $color-bg-primary;
+        @include prefix(border-radius, $radius-lg, webkit moz);
+        padding-block: $space-x8 $space-x15;
+    }
+
+    &__item {
+        max-width: 30rem;
+        margin-inline: auto;
+
+        @media screen and (min-width:32.625em) {
+            max-width: 46rem;
+        }
+    }
+
+    &__content {
+        border: 0.1rem solid $color-bg-secondary;
+        color: $color-text-light;
+        font-size: $fs-body-sm;
+        @include prefix(border-radius, $radius-lg, webkit moz);
+        padding: $space-x8;
+        position: relative;
+
+        &::after {
+
+            background-color: #191A23;
+            bottom: -0.8rem;
+            border: 0.1rem solid #B9FF66;
+            clip-path: polygon(100% -35%, 21% 18%, 100% 100%);
+            content: "";
+            height: 3.8rem;
+            left: 3.8rem;
+            position: absolute;
+            transform: rotate(134deg);
+            width: 6.4rem;
+        }
+    }
+
+    &__info {
+        color: $color-text-light;
+        margin-block-start: $space-x12;
+        margin-inline-start: $space-x15;
+    }
+
+    &__name {
+        color: $color-text-secondary;
+    }
+
+    &__btn-group {
+        gap: $space-x5;
+        margin-block-start: $space-x8;
+    }
+
+    &__dot--active {
+        path {
+            fill: $color-bg-secondary;
+        }
+    }
+}
+
+// Contact Section
+.contact {
+    &__form-wrapper {
+        padding: $space-x10;
+    }
+
+    &__form-action {
+        margin-block-end: $space-x9;
+        gap: $space-x10;
+    }
+
+    &__btn {
+        margin-block-start: $space-x6;
+        width: 100%;
     }
 
     &__img {

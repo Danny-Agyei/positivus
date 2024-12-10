@@ -44,7 +44,7 @@ $fs-h2: 3.6rem;
 $fs-h3: 2.6rem;
 $fs-h4: 1.8rem;
 $fs-body: 1.8rem;
-$fs-label: 1.6rem;
+$fs-body-sm: 1.6rem;
 
 
 // Colors 
@@ -65,6 +65,7 @@ $color-bg-grey: $grey-100;
 
 $color-border-dark: $black;
 $color-border-grey-900: $grey-900;
+$color-border-secondary: $green;
 
 // Border
 $border-standard: 0.1rem solid $grey-900;
@@ -78,8 +79,10 @@ $radius-sm: 0.7rem;
 $shadow-standard: 0rem 0.5rem 0rem $grey-900;
 
 // Transition & Transform 
-$transition-easein-all: all 0.25s ease-in;
-$transition-easeout-all: all 350ms ease-out;
+$transition-ease-1: 0.25s ease;
+$transition-ease-2: 0.35s ease;
+$transition-easein: 0.25s ease-in;
+$transition-easeout: 0.35s ease-out;
 $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
 
 $transition-standard: transform 0.25s $cubic, opacity 0.25s $cubic;

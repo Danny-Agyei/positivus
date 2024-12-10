@@ -1,6 +1,23 @@
-@use "../abstract/variable" as *;
+@use "../abstract/index" as *;
 
 .l-container {
   padding-block: $space-x8;
   padding-inline: $space-x5;
+
+  @include breakpoint(mobile) {
+    max-width: 54rem;
+    margin-inline: auto;
+  }
+
+  @include breakpoint(tablet-portrait) {
+    max-width: 72rem;
+  }
+
+  @include breakpoint(tablet-landscape) {
+    max-width: 94rem;
+  }
+
+  @include breakpoint(desktop) {
+    max-width: 114rem;
+  }
 }

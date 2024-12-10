@@ -41,7 +41,7 @@
 }
 
 
-@include breakpoint(tablet-portrait) {
+@include breakpoint(tablet-landscape) {
     .l-flex-md-row {
         flex-direction: row;
     }

@@ -1,9 +1,9 @@
-@use '../abstract/variable' as *;
+@use '../abstract/index' as *;
 
 .card {
     border: $border-standard;
-    border-radius: $radius-lg;
     box-shadow: $shadow-standard;
+    @include prefix(border-radius, $radius-lg, webkit moz);
 
     &--primary {
         background-color: $color-bg-primary;

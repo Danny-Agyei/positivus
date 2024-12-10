@@ -5,17 +5,17 @@
   display: inline-flex;
   font-size: 2rem;
   justify-content: center;
-  @include prefix(transition, all 250ms ease, moz webkit);
   overflow: hidden;
   position: relative;
+  // @include prefix(transition, all $transition-ease-1, moz webkit);
 
   &__text {
     z-index: 2;
-    @include prefix(transition, color 350ms ease-out, moz webkit);
+    @include prefix(transition, color $transition-easeout, moz webkit);
   }
 
   &__slide {
-    @include prefix(transition, all 350ms ease-out, moz webkit);
+    @include prefix(transition, all $transition-easeout, moz webkit);
     content: "";
     height: 100%;
     left: 0;
@@ -29,7 +29,7 @@
 
   &--sm {
     padding: $space-x5 $space-x9;
-    @include prefix(border-radius, $radius-sm, moz webkit);
+    @include prefix(border-radius, $radius-md, moz webkit);
   }
 
   &--link {
