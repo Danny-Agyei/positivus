@@ -64,7 +64,9 @@ $breakpoints: (
   // Tablet portrait (up to 768px)
   "tablet-landscape": 62em,
   // Tablet landscape (up to 992px)
-  "desktop": 73em // Desktop (up to 1170px),,
+  "desktop": 73em,
+  // Desktop (up to 1170px)
+  "large": 87.5em // Desktop (up to 1170px)
 );
 
 // Mixin to apply styles based on the selected breakpoint
@@ -75,7 +77,3 @@ $breakpoints: (
     @content;
   }
 }
-
-
-// Animation 
-@mixin moving() {}

@@ -4,20 +4,57 @@
   padding-block: $space-x8;
   padding-inline: $space-x5;
 
+  &-case {
+    padding-block: $space-x8;
+
+  }
+
   @include breakpoint(mobile) {
-    max-width: 54rem;
-    margin-inline: auto;
+
+    &,
+    &-header {
+      max-width: 54rem;
+      margin-inline: auto;
+    }
   }
 
   @include breakpoint(tablet-portrait) {
-    max-width: 72rem;
+
+    &,
+    &-header {
+      max-width: 72rem;
+      padding-inline: 0;
+    }
   }
 
   @include breakpoint(tablet-landscape) {
-    max-width: 94rem;
+    padding-block: $space-x20;
+
+    &,
+    &-header,
+    &-companies,
+    &-case {
+      max-width: 94rem;
+    }
   }
 
   @include breakpoint(desktop) {
-    max-width: 114rem;
+
+    &,
+    &-header,
+    &-companies,
+    &-case {
+      max-width: 114rem;
+    }
+  }
+
+  @include breakpoint(large) {
+
+    &,
+    &-header,
+    &-companies,
+    &-case {
+      max-width: 136rem;
+    }
   }
 }

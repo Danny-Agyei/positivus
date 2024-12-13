@@ -1,56 +1,124 @@
 @use "../abstract/index" as *;
-@use "../layout/index" as *;
-@use "../base/utilities" as *;
-@use "../components/index" as *;
 
 // Hero Secion
 .hero {
     margin-block-start: $space-x22;
 
     &__container {
-        display: grid;
         gap: $space-x5;
+
+        @include breakpoint(tablet-portrait) {
+            font-size: 2rem;
+        }
+
+        @include breakpoint(tablet-landscape) {
+            padding-block: $space-x18;
+            grid-template-areas:
+                "heading banner"
+                "block banner"
+            ;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 0 $space-x15;
+        }
+
+        @include breakpoint(desktop) {
+            column-gap: $space-x32;
+        }
+    }
+
+    &__heading {
+        @include breakpoint(tablet-landscape) {
+            grid-area: heading;
+            margin-block-end: $space-x9;
+        }
     }
 
     &__btn {
         width: 100%;
         margin-block-start: $space-x10;
+
+        @include breakpoint(tablet-landscape) {
+            width: auto;
+        }
     }
 
-    &__img {
+    &__banner {
         width: 100%;
         max-width: 65rem;
+
+        @include breakpoint(tablet-landscape) {
+            grid-area: banner;
+            max-width: 100%;
+        }
     }
+
+    &__text-block {
+        height: 100%;
+
+        @include breakpoint(tablet-landscape) {
+            grid-area: block;
+        }
+    }
+
 }
 
 // Companies Section
 .companies {
     overflow: hidden;
+    padding-block: $space-x8;
     width: 100%;
 
-    padding-block: $space-x8;
+
+    &__container {
+        @include breakpoint(tablet-landscape) {
+            margin-inline: auto;
+        }
+    }
 
     &__list {
         gap: $space-x5;
+
+        @include breakpoint(tablet-landscape) {
+            align-items: center;
+        }
     }
 
     &__item {
         gap: $space-x10;
 
         &--1 {
-            transform: translateX(100%);
             animation: moveLeft 20s linear infinite;
+            transform: translateX(100%);
+
+            @include breakpoint(tablet-landscape) {
+                animation: unset;
+                justify-content: space-between;
+                transform: translateX(0);
+                width: 100%;
+            }
         }
 
         &--2 {
-            transform: translateX(-280%);
             animation: moveRight 20s linear infinite;
+            transform: translateX(-280%);
+
+
+            @include breakpoint(tablet-landscape) {
+                animation: unset;
+                display: none;
+            }
         }
     }
 
     &__img {
-        width: 100px;
         filter: grayscale(1);
+        width: 11rem;
+
+        @include breakpoint(desktop) {
+            width: 13rem;
+        }
+
     }
 }
 
@@ -101,10 +169,19 @@
 
     &__btn-text {
         display: none;
+
+        @include breakpoint(tablet-landscape) {
+            display: block;
+
+            &--light {
+                color: $color-text-light;
+            }
+        }
     }
 
     &__img {
         bottom: 0;
+        max-width: 20rem;
         position: absolute;
         right: 0;
         transform: scale(1.1);
@@ -114,8 +191,22 @@
 
 // Proposal Section
 .proposal {
+
+    &__container {
+        @include breakpoint(tablet-landscape) {
+            align-items: center;
+            column-gap: $space-x30;
+            justify-content: space-between;
+        }
+    }
+
     &__content {
         padding: $space-x12;
+
+        @include breakpoint(tablet-landscape) {
+            width: 50%;
+            padding-inline: 0;
+        }
     }
 
     &__heading {
@@ -129,21 +220,57 @@
 
     &__btn {
         width: 100%;
+
+        @include breakpoint(tablet-landscape) {
+            width: auto;
+        }
+    }
+
+    &__cover {
+        @include breakpoint(tablet-landscape) {
+            width: 50%;
+        }
     }
 
     &__img {
         display: none;
+
+        @include breakpoint(tablet-landscape) {
+            display: block;
+            width: calc(100% - 13.5rem);
+        }
     }
 }
 
 // Case studies
 .case {
     &__container {
+        margin-inline: auto;
         padding-inline: 0;
     }
 
     &__header {
         padding-inline: $space-x5;
+    }
+
+    &__wrapper {
+        @include breakpoint(tablet-landscape) {
+            background-color: $color-bg-primary;
+            @include prefix(border-radius, $radius-lg, webkit moz);
+            padding: $space-x12 0;
+        }
+
+        @include breakpoint(tablet-landscape) {
+            padding: $space-x17 $space-x5;
+        }
+    }
+
+
+
+    &__carousel {
+        @include breakpoint(tablet-landscape) {
+            display: flex;
+        }
     }
 
     &__item {
@@ -152,6 +279,25 @@
         @include prefix(border-radius, $radius-lg, webkit moz);
         margin-inline: $space-x5;
         padding: $space-x10 $space-x12;
+
+        @include breakpoint(tablet-landscape) {
+            border-radius: 0;
+            margin-inline: 0;
+            padding: 0 $space-x10;
+
+            &:not(:last-child) {
+                border-right: 1px solid #afafaf;
+            }
+        }
+
+
+        @include breakpoint(desktop) {
+            padding-inline: $space-x12;
+        }
+
+        @include breakpoint(large) {
+            padding-inline: $space-x16;
+        }
     }
 
     &__link {
@@ -162,8 +308,21 @@
 
 // Process section
 .process {
+    &__headline {
+        @include breakpoint(tablet-landscape) {
+            background-color: $color-bg-secondary;
+            @include prefix(border-radius, $radius-sm, webkit moz);
+            display: flex;
+            gap: $space-x3;
+        }
+    }
+
     &__list {
         gap: $space-x5;
+
+        @include breakpoint(desktop) {
+            gap: $space-x8;
+        }
     }
 
     &__item {
@@ -183,6 +342,10 @@
             .process__bar::before {
                 transform: rotate(180deg);
             }
+        }
+
+        @include breakpoint(tablet-landscape) {
+            padding: $space-x10 $space-x15;
         }
     }
 
@@ -205,6 +368,24 @@
 
     &__number {
         font-size: 3rem;
+
+        @include breakpoint(tablet-portrait) {
+            font-size: 3.6rem;
+        }
+
+        @include breakpoint(desktop) {
+            font-size: 6rem;
+        }
+    }
+
+    &__title {
+        @include breakpoint(tablet-portrait) {
+            font-size: 2.2rem;
+        }
+
+        @include breakpoint(desktop) {
+            font-size: 3rem;
+        }
     }
 
     &__btn {
@@ -215,6 +396,12 @@
         &:hover {
             background-color: $color-text-light;
         }
+
+        @include breakpoint(tablet-landscape) {
+            height: 5.8rem;
+            width: 5.8rem;
+        }
+
     }
 
     &__bar {
@@ -237,6 +424,11 @@
             top: 0;
             width: inherit;
         }
+
+        @include breakpoint(tablet-landscape) {
+            height: 0.4rem;
+            width: 2rem;
+        }
     }
 }
 
@@ -244,20 +436,32 @@
 .team {
     &__list {
         gap: $space-x8;
+
+        @include breakpoint(tablet-portrait) {
+            gap: $space-x6;
+        }
+
+        @include breakpoint(tablet-landscape) {
+            gap: $space-x10;
+        }
     }
 
     &__item {
         gap: $space-x5;
         padding: $space-x10 $space-x9;
+
+        @include breakpoint(tablet-portrait) {
+            padding: $space-x10 $space-x6;
+        }
     }
 
-    &__header {
+    &__about {
         position: relative;
     }
 
     &__info {
         align-self: flex-end;
-        font-size: 1.8rem;
+        font-size: var(--fs-body-sm);
         margin-inline-start: $space-x5;
     }
 
@@ -274,6 +478,11 @@
     &__btn {
         margin-block-start: $space-x10;
         width: 100%;
+
+        @include breakpoint(tablet-portrait) {
+            max-width: 25rem;
+            align-self: flex-end;
+        }
     }
 }
 
@@ -282,7 +491,11 @@
     &__wrapper {
         background-color: $color-bg-primary;
         @include prefix(border-radius, $radius-lg, webkit moz);
-        padding-block: $space-x8 $space-x15;
+        padding-block: $space-x10 $space-x15;
+
+        @include breakpoint(desktop) {
+            padding-block: $space-x18;
+        }
     }
 
     &__item {
@@ -292,15 +505,28 @@
         @media screen and (min-width:32.625em) {
             max-width: 46rem;
         }
+
+        @include breakpoint(tablet-landscape) {
+            max-width: 60rem;
+        }
+
+        @include breakpoint(large) {
+            max-width: 70rem;
+        }
+
     }
 
     &__content {
         border: 0.1rem solid $color-bg-secondary;
         color: $color-text-light;
-        font-size: $fs-body-sm;
+        font-size: var(--fs-body-sm);
         @include prefix(border-radius, $radius-lg, webkit moz);
         padding: $space-x8;
         position: relative;
+
+        @include breakpoint(desktop) {
+            font-size: 1.8rem;
+        }
 
         &::after {
 
@@ -341,21 +567,66 @@
 
 // Contact Section
 .contact {
-    &__form-wrapper {
-        padding: $space-x10;
+
+    &__content {
+        margin-inline: auto;
+        width: 55rem;
+
+        @include breakpoint(tablet-landscape) {
+            justify-content: space-between;
+            gap: $space-x35;
+            padding-inline-start: $space-x25;
+            padding-block: $space-x16 $space-x10;
+            width: 100%;
+        }
+
+    }
+
+    &__form {
+        @include breakpoint(tablet-landscape) {
+            width: 50%;
+        }
+
+        &-wrapper {
+            padding: $space-x10;
+
+            @include breakpoint(tablet-landscape) {
+                padding-inline: 0;
+                padding-block-start: 0;
+            }
+        }
     }
 
     &__form-action {
-        margin-block-end: $space-x9;
         gap: $space-x10;
+        margin-block-end: $space-x9;
     }
 
     &__btn {
         margin-block-start: $space-x6;
         width: 100%;
+
+        @include breakpoint(tablet-landscape) {
+            margin-block-start: 0;
+        }
+    }
+
+    &__cover {
+        @include breakpoint(tablet-landscape) {
+            width: 50%;
+        }
     }
 
     &__img {
         display: none;
+        width: 100%;
+
+        @include breakpoint(tablet-landscape) {
+            display: block;
+            height: 58rem;
+            margin-inline-start: auto;
+            max-width: 35rem;
+            object-fit: cover;
+        }
     }
 }

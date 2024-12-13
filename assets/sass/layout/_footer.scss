@@ -10,6 +10,10 @@
 
     &__logo {
         margin-inline: auto;
+
+        @include breakpoint(tablet-landscape) {
+            margin-inline: 0;
+        }
     }
 
     &__wrapper {
@@ -20,12 +24,37 @@
 
         @include breakpoint(mobile) {
             @include prefix(border-radius, $radius-lg, moz webkit);
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
         }
+
+        @include breakpoint(tablet-portrait) {
+            padding-inline: $space-x15;
+        }
+
+        @include breakpoint(tablet-landscape) {
+            grid-template-columns: 0.6fr 1fr 0.5fr;
+            gap: $space-x16 $space-x10;
+        }
+
+        @include breakpoint(desktop) {
+            padding-block: $space-x13;
+        }
+
+
     }
 
     &__list {
         gap: $space-x4;
-        font-size: $fs-body-sm;
+        font-size: var(--fs-body-sm);
+
+        @include breakpoint(tablet-landscape) {
+            flex-direction: row;
+        }
+
+        @include breakpoint(desktop) {
+            gap: $space-x10;
+        }
     }
 
     &__link {
@@ -35,10 +64,24 @@
         &:is(:hover, :active) {
             opacity: 0.5;
         }
+
+        @include breakpoint(tablet-landscape) {
+            text-decoration: underline;
+        }
+
+        @include breakpoint(desktop) {
+            text-decoration: underline;
+            font-size: 1.8rem;
+        }
     }
 
     &__nav-social {
         grid-row: 5/5;
+
+        @include breakpoint(tablet-landscape) {
+            grid-row: auto;
+            justify-self: self-end;
+        }
     }
 
     &__brand {
@@ -59,7 +102,15 @@
     }
 
     &__info {
-        font-size: $fs-body-sm;
+        font-size: var(--fs-body-sm);
+
+        @include breakpoint(tablet-landscape) {
+            text-align: left;
+        }
+
+        @include breakpoint(desktop) {
+            font-size: 1.8rem;
+        }
     }
 
     &__contact {
@@ -76,16 +127,32 @@
         margin-block-end: $space-x8;
         padding: $space-x2;
         width: max-content;
+
+        @include breakpoint(tablet-landscape) {
+            align-self: flex-start;
+        }
     }
 
-    &-form {
+    &__form {
         background-color: #292A32;
         padding: $space-x8;
         @include prefix(border-radius, $radius-md, moz webkit);
+
+        @include breakpoint(tablet-landscape) {
+            padding: $space-x16 $space-x10;
+            grid-column: 2 / span 2;
+            height: max-content;
+            max-width: 60rem;
+            margin-inline-start: auto;
+        }
     }
 
     &__group {
         gap: $space-x3;
+
+        @include breakpoint(tablet-landscape) {
+            flex-direction: row;
+        }
     }
 
     &__control {
@@ -112,12 +179,35 @@
     }
 
     &__tc {
-        font-size: $fs-body-sm;
+        font-size: var(--fs-body-sm);
         gap: $space-x4;
+
+        @include breakpoint(tablet-landscape) {
+            grid-column: 1 / span 3;
+            align-items: flex-start;
+            gap: 0;
+        }
+
+        @include breakpoint(desktop) {
+            font-size: 1.8rem;
+        }
     }
 
     &__seperator {
         border-color: #fff;
+
+        @include breakpoint(tablet-landscape) {
+            margin-block-end: $space-x12;
+        }
+    }
+
+    &__copy {
+        gap: $space-x3;
+
+        @include breakpoint(tablet-landscape) {
+            flex-direction: row;
+            gap: $space-x10;
+        }
     }
 
 

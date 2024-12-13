@@ -1,4 +1,6 @@
-@use './base/global';
-@use './layout/header';
+@use "./abstract/variable" as *;
+@use './base/index' as *;
+@use "./components/index" as *;
+@use './layout/index' as *;
 @use './pages/home';
 @use './layout/footer';

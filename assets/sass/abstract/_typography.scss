@@ -1,0 +1,28 @@
+@use './mixin' as *;
+
+// Typography 
+$ff-primary: "Space Grotesk", serif;
+
+:root {
+    --fs-base: 0.625rem;
+    --fs-h1: 4.3rem;
+    --fs-h2: 3.6rem;
+    --fs-h3: 2.6rem;
+    --fs-h4: 1.8rem;
+    --fs-body: 1.8rem;
+    --fs-body-sm: 1.6rem;
+
+    @include breakpoint(tablet-portrait) {
+        --fs-h1: 6rem;
+        --fs-h2: 4rem;
+        --fs-h3: 3rem;
+    }
+
+    @include breakpoint(tablet-landscape) {
+        --fs-h1: 5rem;
+    }
+
+    @include breakpoint(desktop) {
+        --fs-h1: 6rem;
+    }
+}

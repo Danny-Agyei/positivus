@@ -58,7 +58,7 @@
   <body>
     <!-- Header / Main navigation  -->
     <header class="header">
-      <div class="header__container l-flex-jb-center">
+      <div class="header__container l-container-header l-flex-jb-center">
         <a href="#footer">
           <img
             src="./assets/images/logo-dark.png"
@@ -88,7 +88,7 @@
             <li class="header__item">
               <a href="#" class="header__btn btn btn--outline btn--sm">
                 <span class="btn__slide"></span>
-                <span class="btn__text">Book a consultation</span></a
+                <span class="btn__text">Request a quote</span></a
               >
             </li>
           </ul>
@@ -104,12 +104,16 @@
     <main>
       <!-- Hero section  -->
       <section class="hero">
-        <div class="hero__container l-container">
+        <div class="hero__container l-container l-grid">
           <h1 class="u-heading-lg hero__heading">
             Navigating the digital landscape for success
           </h1>
-          <img src="./assets/images/hero-banner.png" alt="" class="hero__img" />
-          <div class="hero__block">
+          <img
+            src="./assets/images/hero-banner.png"
+            alt=""
+            class="hero__banner"
+          />
+          <div class="hero__text-block">
             <p>
               Our digital marketing agency helps businesses grow and succeed
               online through a range of services including SEO, PPC, social
@@ -125,7 +129,7 @@
 
       <!-- Companies section  -->
       <section class="companies">
-        <div class="company__contaier l-containers">
+        <div class="companies__container l-container-companies">
           <ul class="companies__list l-flex-col">
             <li class="companies__item companies__item--1 l-flex-ac">
               <img
@@ -295,7 +299,10 @@
                 <button class="services__btn btn btn--link">
                   <span class="btn__icon btn__icon--secondary btn__icon--round"
                     ><i class="fa-solid fa-arrow-right"></i></span
-                  ><span class="services__btn-text btn__text">Learn more</span>
+                  ><span
+                    class="services__btn-text services__btn-text--light btn__text"
+                    >Learn more</span
+                  >
                 </button>
               </div>
               <div class="services__cover">
@@ -365,12 +372,15 @@
                 <button class="services__btn btn btn--link">
                   <span class="btn__icon btn__icon--secondary btn__icon--round"
                     ><i class="fa-solid fa-arrow-right"></i></span
-                  ><span class="services__btn-text btn__text">Learn more</span>
+                  ><span
+                    class="services__btn-text services__btn-text--light btn__text"
+                    >Learn more</span
+                  >
                 </button>
               </div>
               <div class="services__cover">
                 <img
-                  src="./assets/images/service-3.png"
+                  src="./assets/images/service-6.png"
                   alt="Social Media marketing"
                   class="services__img"
                   width="210"
@@ -396,17 +406,19 @@
               <span class="btn__text">Get your free proposal</span>
             </button>
           </div>
-          <img
-            src="./assets/images/proposal.png"
-            alt=""
-            class="proposal__img"
-          />
+          <div class="proposal__cover">
+            <img
+              src="./assets/images/proposal.png"
+              alt=""
+              class="proposal__img"
+            />
+          </div>
         </div>
       </section>
 
       <!-- Case studies section  -->
       <section class="case">
-        <div class="case__container l-container">
+        <div class="case__container l-container-case">
           <div class="case__header u-section-header">
             <h2 class="u-heading-md">Case Studies</h2>
             <p>
@@ -414,45 +426,47 @@
               through Our Case Studies
             </p>
           </div>
-          <div
-            class="case__carousel owl-carousel owl-theme js-carousel"
-            data-name="case"
-          >
-            <div class="case__item item">
-              <p>
-                For a local restaurant, we implemented a targeted PPC campaign
-                that resulted in a 50% increase in website traffic and a 25%
-                increase in sales.
-              </p>
-              <a href="#" class="case__link btn btn--link btn-link--primary">
-                <span class="btn__text"> Learn more </span
-                ><span class="btn__icon"
-                  ><i class="fa-solid fa-arrow-right"></i></span
-              ></a>
-            </div>
-            <div class="case__item item">
-              <p>
-                For a local restaurant, we implemented a targeted PPC campaign
-                that resulted in a 50% increase in website traffic and a 25%
-                increase in sales.
-              </p>
-              <a href="#" class="case__link btn btn--link btn-link--primary">
-                <span class="btn__text"> Learn more </span
-                ><span class="btn__icon"
-                  ><i class="fa-solid fa-arrow-right"></i></span
-              ></a>
-            </div>
-            <div class="case__item item">
-              <p>
-                For a local restaurant, we implemented a targeted PPC campaign
-                that resulted in a 50% increase in website traffic and a 25%
-                increase in sales.
-              </p>
-              <a href="#" class="case__link btn btn--link btn-link--primary">
-                <span class="btn__text"> Learn more </span
-                ><span class="btn__icon"
-                  ><i class="fa-solid fa-arrow-right"></i></span
-              ></a>
+          <div class="case__wrapper">
+            <div
+              class="case__carousel owl-carousel owl-theme js-carousel"
+              data-name="case"
+            >
+              <div class="case__item item">
+                <p>
+                  For a local restaurant, we implemented a targeted PPC campaign
+                  that resulted in a 50% increase in website traffic and a 25%
+                  increase in sales.
+                </p>
+                <a href="#" class="case__link btn btn--link btn-link--primary">
+                  <span class="btn__text"> Learn more </span
+                  ><span class="btn__icon"
+                    ><i class="fa-solid fa-arrow-right"></i></span
+                ></a>
+              </div>
+              <div class="case__item item">
+                <p>
+                  For a local restaurant, we implemented a targeted PPC campaign
+                  that resulted in a 50% increase in website traffic and a 25%
+                  increase in sales.
+                </p>
+                <a href="#" class="case__link btn btn--link btn-link--primary">
+                  <span class="btn__text"> Learn more </span
+                  ><span class="btn__icon"
+                    ><i class="fa-solid fa-arrow-right"></i></span
+                ></a>
+              </div>
+              <div class="case__item item">
+                <p>
+                  For a local restaurant, we implemented a targeted PPC campaign
+                  that resulted in a 50% increase in website traffic and a 25%
+                  increase in sales.
+                </p>
+                <a href="#" class="case__link btn btn--link btn-link--primary">
+                  <span class="btn__text"> Learn more </span
+                  ><span class="btn__icon"
+                    ><i class="fa-solid fa-arrow-right"></i></span
+                ></a>
+              </div>
             </div>
           </div>
         </div>
@@ -462,7 +476,7 @@
       <section class="process">
         <div class="process__container l-container">
           <div class="process__header u-section-header">
-            <div>
+            <div class="process__headline">
               <h2 class="u-heading-md">Our Working</h2>
               <h2 class="u-heading-md">Process</h2>
             </div>
@@ -615,7 +629,7 @@
 
       <!-- Our team section  -->
       <section class="team">
-        <div class="team__container l-container">
+        <div class="team__container l-container l-flex-col">
           <div class="team__header u-section-header">
             <h2 class="u-heading-md">Team</h2>
             <p>
@@ -625,7 +639,7 @@
           </div>
           <ul class="team__list l-grid-col-1 l-grid-md-col-2 l-grid-lg-col-3">
             <li class="team__item card l-flex-col">
-              <div class="team__header l-flex">
+              <div class="team__about l-flex">
                 <img
                   src="./assets/images/team-1.png"
                   alt="CEO and Founder"
@@ -648,7 +662,7 @@
               </p>
             </li>
             <li class="team__item card l-flex-col">
-              <div class="team__header l-flex-ac">
+              <div class="team__about l-flex-ac">
                 <img
                   src="./assets/images/team-2.png"
                   alt="Director of Operations"
@@ -671,7 +685,7 @@
               </p>
             </li>
             <li class="team__item card l-flex-col">
-              <div class="team__header l-flex-ac">
+              <div class="team__about l-flex-ac">
                 <img
                   src="./assets/images/team-3.png"
                   alt="Senior SEO Specialist"
@@ -694,7 +708,7 @@
               </p>
             </li>
             <li class="team__item card l-flex-col">
-              <div class="team__header l-flex-ac">
+              <div class="team__about l-flex-ac">
                 <img
                   src="./assets/images/team-4.png"
                   alt="PPC Manager"
@@ -717,7 +731,7 @@
               </p>
             </li>
             <li class="team__item card l-flex-col">
-              <div class="team__header l-flex-ac">
+              <div class="team__about l-flex-ac">
                 <img
                   src="./assets/images/team-5.png"
                   alt="Social Media Specialist"
@@ -741,7 +755,7 @@
               </p>
             </li>
             <li class="team__item card l-flex-col">
-              <div class="team__header l-flex-ac">
+              <div class="team__about l-flex-ac">
                 <img
                   src="./assets/images/team-6.png"
                   alt="Content Creator"
@@ -947,13 +961,14 @@
             <p>Connect with Us: Let's Discuss Your Digital Marketing Needs</p>
           </div>
           <div class="contact__content l-flex-col l-flex-md-row">
-            <form class="form" novalidate>
+            <form class="form contact__form">
               <div class="contact__form-wrapper form__wrapper">
                 <fieldset class="form__action contact__form-action l-flex-ac">
                   <input
                     type="radio"
                     class="form__radio"
                     name="choice"
+                    checked
                     id="say-hi"
                   />
                   <label class="form__radio-label l-flex-ac" for="say-hi"
@@ -976,6 +991,7 @@
                     id="name"
                     class="form__control"
                     placeholder="Name"
+                    required
                   />
                 </div>
                 <div class="form__group">
@@ -984,6 +1000,7 @@
                     type="text"
                     id="email"
                     class="form__control"
+                    required
                     placeholder="Email"
                   />
                 </div>
@@ -995,6 +1012,7 @@
                     id="message"
                     rows="10"
                     cols="30"
+                    required
                   ></textarea>
                 </div>
               </div>
@@ -1003,13 +1021,15 @@
                 <span class="btn__text">Send Message</span>
               </button>
             </form>
-            <img
-              src="./assets/images/contact-us.png"
-              alt=""
-              class="contact__img"
-              width="400"
-              height="400"
-            />
+            <div class="contact__cover">
+              <img
+                src="./assets/images/contact-us.png"
+                alt=""
+                class="contact__img"
+                width="400"
+                height="400"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -1064,7 +1084,7 @@
               >
               <p>Address: 1234 Main St Moonstone City, Stardust State 12345</p>
             </div>
-            <form class="form footer-form">
+            <form class="form footer__form">
               <div class="form__group--row footer__group l-flex-col">
                 <input
                   type="email"
@@ -1079,8 +1099,10 @@
             </form>
             <div class="footer__tc l-flex-col-center">
               <hr class="u-seperator footer__seperator" />
-              <p>© 2023 Positivus. All Rights Reserved.</p>
-              <a href="#" class="footer__link">Privacy Policy</a>
+              <div class="footer__copy l-flex-col">
+                <p>© 2023 Positivus. All Rights Reserved.</p>
+                <a href="#" class="footer__link">Privacy Policy</a>
+              </div>
             </div>
           </div>
         </div>

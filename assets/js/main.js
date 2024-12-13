@@ -31,6 +31,8 @@ $(document).ready(function () {
   }
 
   // Owl carousel config
+  const screenWidth = $(window).width();
+
   [...allCarousels].forEach((elem) => {
     const sectionName = $(elem).attr("data-name");
 
@@ -40,13 +42,19 @@ $(document).ready(function () {
         autoPlayTimeout: 1000,
         autoplaySpeed: 1800,
         smartSpeed: 800,
-        margin: 10,
+        margin: 0,
         nav: false,
         dots: false,
+        autoplay: true,
         responsive: {
           768: {
             margin: 10,
             items: 2,
+          },
+          992: {
+            item: 1,
+            margin: 0,
+            autoplay: false,
           },
         },
       },
@@ -55,6 +63,7 @@ $(document).ready(function () {
         autoPlayTimeout: 1000,
         autoplaySpeed: 1800,
         smartSpeed: 800,
+        autoplay: true,
         margin: 0,
         nav: true,
         dots: false,
@@ -68,18 +77,32 @@ $(document).ready(function () {
             items: 2,
             margin: 50,
           },
+          992: {
+            nav: true,
+            items: 2,
+            margin: 50,
+          },
         },
       },
     };
+
+    let filteredOptions = { ...options[sectionName] };
+
+    // Disable Case carousel on large screen
+    if (screenWidth > 990) {
+      const caseCarousel = $(".case__carousel");
+
+      caseCarousel.trigger("destroy.owl.carousel");
+      filteredOptions = { ...options["testimonials"] };
+    }
 
     $(elem).owlCarousel({
       center: true,
       items: 1,
       loop: true,
-      autoplay: true,
       autoHeight: true,
       autoplayHoverPause: true,
-      ...options[sectionName],
+      ...filteredOptions,
     });
   });
 });

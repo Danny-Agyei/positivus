@@ -1,25 +1,25 @@
-@use "../abstract/variable" as *;
+@use "../abstract/index" as *;
 
 .u-heading-lg {
-  font-size: $fs-h1;
+  font-size: var(--fs-h1);
   line-height: 1.28;
 }
 
 .u-heading-md {
   background-color: $color-bg-secondary;
-  border-radius: $radius-sm;
-  font-size: $fs-h2;
+  @include prefix(border-radius, $radius-sm, webkit moz);
+  font-size: var(--fs-h2);
   width: max-content;
   margin-inline: auto;
 }
 
 .u-heading-sm {
-  font-size: $fs-h4;
+  font-size: var(--fs-h4);
 }
 
 .u-title {
   border-radius: $radius-sm;
-  font-size: $fs-h3;
+  font-size: var(--fs-h3);
   width: max-content;
 }
 
@@ -35,11 +35,19 @@
 
 .u-section-header {
   align-items: center;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: $space-x8;
-  margin-block-end: $space-x10;
+  margin-block-end: $space-x16;
   text-align: center;
+  max-width: 50rem;
+  margin-inline: auto;
+
+  @include breakpoint(tablet-landscape) {
+    grid-template-columns: auto auto;
+    text-align: left;
+    max-width: 60rem;
+    margin-inline: 0;
+  }
 }
 
 .u-seperator {
