@@ -12,7 +12,8 @@
   @include breakpoint(mobile) {
 
     &,
-    &-header {
+    &-header,
+    &-nav {
       max-width: 54rem;
       margin-inline: auto;
     }
@@ -21,8 +22,9 @@
   @include breakpoint(tablet-portrait) {
 
     &,
-    &-header {
-      max-width: 72rem;
+    &-header,
+    &-nav {
+      max-width: 70rem;
       padding-inline: 0;
     }
   }
@@ -54,7 +56,7 @@
     &-header,
     &-companies,
     &-case {
-      max-width: 136rem;
+      max-width: 134rem;
     }
   }
 }

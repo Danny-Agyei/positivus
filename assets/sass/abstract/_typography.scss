@@ -25,4 +25,8 @@ $ff-primary: "Space Grotesk", serif;
     @include breakpoint(desktop) {
         --fs-h1: 6rem;
     }
+
+    @include breakpoint(large) {
+        --fs-h1: 6.5rem;
+    }
 }

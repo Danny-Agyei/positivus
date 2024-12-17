@@ -43,10 +43,14 @@
   margin-inline: auto;
 
   @include breakpoint(tablet-landscape) {
-    grid-template-columns: auto auto;
+    grid-template-columns: auto 1fr;
     text-align: left;
-    max-width: 60rem;
+    max-width: 100%;
     margin-inline: 0;
+
+    &>p {
+      max-width: 58rem;
+    }
   }
 }
 

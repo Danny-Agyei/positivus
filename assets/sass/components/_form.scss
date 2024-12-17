@@ -6,10 +6,10 @@
     }
 
     &__radio {
-        visibility: hidden;
         left: 0;
         opacity: 0;
         position: absolute;
+        visibility: hidden;
 
         &-label {
             cursor: pointer;
@@ -20,9 +20,9 @@
                 border: $border-standard;
                 @include prefix(border-radius, $radius-circle, webkit moz);
                 content: "";
+                height: 2.8rem;
                 display: inline-block;
                 width: 2.8rem;
-                height: 2.8rem;
             }
 
             &::after {
@@ -60,15 +60,12 @@
         ::placeholder {
             color: #898989;
         }
-    }
 
-    &__textarea {
-        @include prefix(border-radius, $radius-md, webkit moz);
-        border: $border-standard;
-        width: 100%;
-
-        ::placeholder {
-            color: #898989;
+        &--text {
+            width: 100%;
+            height: 100%;
+            padding-block: $space-x5;
         }
     }
+
 }

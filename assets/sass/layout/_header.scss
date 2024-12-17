@@ -56,8 +56,8 @@
 
                 @for $i from 1 through 6 {
                     &:nth-child(#{$i}) {
-                        transition-delay: #{0.07 * $i+0.1}s;
-                        -webkit-transition-delay: #{0.07 * $i+0.1}s;
+                        transition-delay: #{0.04 * $i+0.1}s;
+                        -webkit-transition-delay: #{0.04 * $i+0.1}s;
                     }
                 }
             }
@@ -124,8 +124,22 @@
     }
 
     &__btn {
-        @include breakpoint(tablet-landscape) {
-            padding: 1.4rem 2rem;
+
+        &--mobile {
+            width: 30rem;
+
+            @include breakpoint(tablet-landscape) {
+                display: none;
+            }
+        }
+
+        &--desktop {
+            display: none;
+
+            @include breakpoint(tablet-landscape) {
+                display: inline-flex;
+                padding: 1.4rem 2rem;
+            }
         }
     }
 

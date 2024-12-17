@@ -7,21 +7,21 @@
   justify-content: center;
   overflow: hidden;
   position: relative;
-  // @include prefix(transition, all $transition-ease-1, moz webkit);
+  @include prefix(transition, all $transition-ease-2, moz webkit);
 
   &__text {
     z-index: 2;
-    @include prefix(transition, color $transition-easeout, moz webkit);
+    @include prefix(transition, color $transition-ease-2, moz webkit);
   }
 
   &__slide {
-    @include prefix(transition, all $transition-easeout, moz webkit);
     content: "";
     height: 100%;
     left: 0;
     position: absolute;
     transform: translateX(-100%);
     width: 100%;
+    @include prefix(transition, transform $transition-ease-2, moz webkit);
     z-index: 1;
   }
 

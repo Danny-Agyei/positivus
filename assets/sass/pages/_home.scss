@@ -45,7 +45,7 @@
 
     &__banner {
         width: 100%;
-        max-width: 65rem;
+        max-width: 70rem;
 
         @include breakpoint(tablet-landscape) {
             grid-area: banner;
@@ -76,6 +76,7 @@
         }
     }
 
+
     &__list {
         gap: $space-x5;
 
@@ -86,10 +87,30 @@
 
     &__item {
         gap: $space-x10;
+        width: max-content;
+
+        @include breakpoint(tablet-landscape) {
+            width: 100%;
+
+            &--2 {
+                display: none;
+            }
+        }
+    }
+
+    &__marquee {
+        gap: $space-x10;
+
+        @include breakpoint(tablet-landscape) {
+            justify-content: space-between;
+
+            &--hidden {
+                display: none;
+            }
+        }
 
         &--1 {
-            animation: moveLeft 20s linear infinite;
-            transform: translateX(100%);
+            animation: move 25s linear infinite;
 
             @include breakpoint(tablet-landscape) {
                 animation: unset;
@@ -100,20 +121,23 @@
         }
 
         &--2 {
-            animation: moveRight 20s linear infinite;
-            transform: translateX(-280%);
-
+            animation: move 25s linear infinite reverse;
 
             @include breakpoint(tablet-landscape) {
                 animation: unset;
-                display: none;
             }
         }
     }
 
     &__img {
         filter: grayscale(1);
+        height: 100%;
+        @include prefix(transition, filter $transition-ease-2, moz webkit);
         width: 11rem;
+
+        &:hover {
+            filter: grayscale(0);
+        }
 
         @include breakpoint(desktop) {
             width: 13rem;
@@ -122,23 +146,13 @@
     }
 }
 
-@keyframes moveLeft {
+@keyframes move {
     from {
-        transform: translateX(100%);
+        transform: translate(0%);
     }
 
     to {
-        transform: translateX(-800px);
-    }
-}
-
-@keyframes moveRight {
-    from {
-        transform: translateX(-280%);
-    }
-
-    to {
-        transform: translateX(150%);
+        transform: translate(calc(-100% - $space-x10));
     }
 }
 
@@ -308,6 +322,14 @@
 
 // Process section
 .process {
+    &__header {
+
+        @include breakpoint(tablet-landscape) {
+            max-width: 80rem;
+        }
+
+    }
+
     &__headline {
         @include breakpoint(tablet-landscape) {
             background-color: $color-bg-secondary;
@@ -349,8 +371,9 @@
         }
     }
 
-    &__header {
+    &__panel {
         gap: $space-x6;
+
     }
 
     &__title-block {
@@ -492,6 +515,7 @@
         background-color: $color-bg-primary;
         @include prefix(border-radius, $radius-lg, webkit moz);
         padding-block: $space-x10 $space-x15;
+        position: relative;
 
         @include breakpoint(desktop) {
             padding-block: $space-x18;
@@ -556,28 +580,34 @@
     &__btn-group {
         gap: $space-x5;
         margin-block-start: $space-x8;
+        position: relative;
+        z-index: 2;
+        max-width: 15rem;
+        margin-inline: auto;
     }
 
-    &__dot--active {
-        path {
-            fill: $color-bg-secondary;
-        }
-    }
 }
 
 // Contact Section
 .contact {
 
+    &__header {
+
+        @include breakpoint(tablet-landscape) {
+            max-width: 60rem;
+        }
+    }
+
     &__content {
         margin-inline: auto;
-        width: 55rem;
+        max-width: 55rem;
 
         @include breakpoint(tablet-landscape) {
             justify-content: space-between;
             gap: $space-x35;
             padding-inline-start: $space-x25;
             padding-block: $space-x16 $space-x10;
-            width: 100%;
+            max-width: 100%;
         }
 
     }

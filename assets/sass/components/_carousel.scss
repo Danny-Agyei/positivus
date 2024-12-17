@@ -1,74 +1,84 @@
-/* Olw carousel reset  */
-// .owl-item img {
-//     height: 100%;
-//     object-fit: cover;
-// }
+@use '../abstract/index' as *;
 
-// .owl-dots {
-//     text-align: center;
-//     padding-top: 15px;
-// }
+.owl {
 
-// .owl-dots {
-//     padding-block-start: 0;
-// }
+    &-dots {
+        display: none;
+    }
 
-// .owl-dots button.owl-dot {
-//     background-color: var(--color-bg-white);
-//     border-radius: 4px;
-//     display: inline-flex;
-//     height: 4px;
-//     margin-inline-end: var(--spacing-4x);
-//     width: 55px;
-// }
+    &-item {
+        height: auto !important;
+        display: flex;
+    }
 
-// .owl-dots button.owl-dot span {
-//     display: none !important;
-// }
 
-// .owl-dots button.owl-dot:last-child {
-//     margin-inline-end: 0;
-// }
-
-// .owl-dots button.owl-dot.active {
-//     background-color: var(--color-bg-primary);
-// }
-
-// .owl-dots button.owl-dot:focus {
-//     outline: none;
-// }
-
-// .owl-nav button {
-//     align-items: center;
-//     background: var(--color-bg-white) !important;
-//     border-radius: var(--radius-full) !important;
-//     display: inline-flex;
-//     height: 40px;
-//     position: absolute;
-//     top: 50%;
-//     transform: translateY(-50%);
-//     transition: all var(--transition-1);
-//     -webkit-transition: all var(--transition-1);
-//     width: 40px;
-// }
-
-// .owl-nav button.owl-prev {
-//     left: 0;
-// }
-
-// .owl-nav button.owl-next {
-//     right: 0;
-// }
-
-// .owl-nav button:active {
-//     outline: none;
-// }
-
-.owl-item {
-    height: auto !important;
-    display: flex;
 }
 
 .item {
     width: 100%;
+}
+
+// Testiomonial Carousel 
+.testimonials {
+
+    &__carousel {
+        position: static;
+        padding-block-end: $space-x16;
+
+
+        .owl-nav {
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 5.2rem;
+            z-index: 1;
+
+            @include breakpoint(tablet-portrait) {
+                bottom: 4.5rem;
+            }
+
+            @include breakpoint(desktop) {
+                bottom: 5.8rem;
+            }
+
+            button.owl-prev,
+            button.owl-next {
+                color: $color-text-light;
+                font-size: 2rem;
+
+                @include breakpoint(tablet-portrait) {
+                    font-size: 2.8rem;
+                }
+
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+
+            button.owl-next {
+                transform: translateX(110px);
+
+                @include breakpoint(tablet-portrait) {
+
+                    transform: translateX(200px);
+                }
+            }
+
+            button.owl-prev {
+                transform: translateX(-110px);
+
+                @include breakpoint(tablet-portrait) {
+                    transform: translateX(-200px);
+                }
+            }
+        }
+
+    }
+
+    .owl-dot.active {
+        path {
+            fill: $color-bg-secondary;
+        }
+    }
+
 }

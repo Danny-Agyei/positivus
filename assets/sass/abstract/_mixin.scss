@@ -22,10 +22,9 @@ $btn-variants: (
     "slide-bg": $color-bg-primary,
     "hover-text": $color-bg-light,
   ),
-  outline: (border: $border-standard,
-    "color": $color-text-primary,
-    "slide-bg": $color-bg-primary,
-    "hover-text": $color-bg-light,
+  outline: ("color": $color-text-primary,
+    "slide-bg": $color-bg-secondary,
+    "hover-text": $color-bg-primary,
   ),
 );
 
@@ -33,9 +32,8 @@ $btn-variants: (
   @each $variant, $props in $btn-variants {
     &--#{$variant} {
       background-color: map.get($props, "bg-color");
-      border: map.get($props, "border");
+      border: $border-standard;
       color: map.get($props, "color");
-      @include prefix(transition, background 0.6s ease-in, moz webkit);
 
       .btn__slide {
         background-color: map.get($props, "slide-bg");
