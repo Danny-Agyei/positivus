@@ -38,6 +38,10 @@
     &-case {
       max-width: 94rem;
     }
+
+    &-nav {
+      all: unset;
+    }
   }
 
   @include breakpoint(desktop) {

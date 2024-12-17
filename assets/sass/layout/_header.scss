@@ -17,6 +17,12 @@
 
     }
 
+    @include breakpoint(desktop) {
+        &__logo {
+            width: 18rem;
+        }
+    }
+
     &__nav {
         background: $color-bg-light;
         height: 0.2rem;

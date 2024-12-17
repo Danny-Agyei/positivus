@@ -2,6 +2,7 @@ $(document).ready(function () {
   const navToggleBtn = $(".js-toggle");
   const accordionBtns = $(".js-accordion-toggle");
   const navbar = $(".js-nav");
+  const processItems = $(".js-process-item");
   const allSliders = $(".js-slider");
   const caseSlider = $(".js-case-slider");
   const testOwl = $(".js-testimonials-slider");
@@ -25,11 +26,21 @@ $(document).ready(function () {
 
   function handleAccordionToggle() {
     const targetName = $(this).attr("data-target");
-
     const targetElem = $(`[data-name=${targetName}]`)[0];
 
     $(this).click(() => {
-      $(targetElem).toggleClass(PROCESS_ITEM_OPEN_CLASS);
+      if ($(targetElem).hasClass(PROCESS_ITEM_OPEN_CLASS)) {
+        processItems.removeClass(PROCESS_ITEM_OPEN_CLASS);
+        processItems.attr("aria-expanded", false);
+
+        return;
+      }
+
+      processItems.removeClass(PROCESS_ITEM_OPEN_CLASS);
+      processItems.attr("aria-expanded", false);
+
+      $(targetElem).addClass(PROCESS_ITEM_OPEN_CLASS);
+      $(targetElem).attr("aria-expanded", true);
     });
   }
 
@@ -41,6 +52,7 @@ $(document).ready(function () {
       autoplaySpeed: 1800,
       smartSpeed: 800,
       margin: 0,
+      center: true,
       loop: true,
       nav: false,
       dots: false,
@@ -63,8 +75,9 @@ $(document).ready(function () {
       autoplaySpeed: 1800,
       smartSpeed: 800,
       autoplay: false,
-      margin: 0,
+      margin: 20,
       loop: false,
+      center: true,
       nav: true,
       dots: true,
       navText: [
@@ -72,13 +85,22 @@ $(document).ready(function () {
         '<i class="fa-solid fa-arrow-right" aria-hidden="true"></i>',
       ],
       responsive: {
+        375: {
+          margin: 30,
+          center: false,
+        },
         768: {
-          items: 2,
-          margin: 50,
+          items: 1,
+          margin: 30,
         },
         992: {
           items: 2,
-          margin: 50,
+          margin: 0,
+          center: false,
+        },
+        1400: {
+          items: 2,
+          center: false,
         },
       },
     },
@@ -102,7 +124,6 @@ $(document).ready(function () {
       }
 
       $(elem).owlCarousel({
-        center: true,
         items: 1,
         autoHeight: true,
         autoplayHoverPause: true,
@@ -125,5 +146,10 @@ $(document).ready(function () {
     testOwlDot.each(() => {
       testOwlDot.eq(index).addClass("active");
     });
+  });
+
+  // Initialize Lenis
+  const lenis = new Lenis({
+    autoRaf: true,
   });
 });

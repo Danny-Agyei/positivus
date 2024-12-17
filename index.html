@@ -18,6 +18,12 @@
       rel="stylesheet"
     />
 
+    <!-- Lenis stylesheet  -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.1.18/dist/lenis.css"
+    />
+
     <!-- Favicon -->
     <link
       rel="apple-touch-icon"
@@ -69,7 +75,7 @@
           />
         </a>
         <nav class="header__nav js-nav" aria-label="main">
-          <ul class="header__list">
+          <ul class="header__list l-container-nav">
             <li class="header__item">
               <a href="#" class="header__link js-toggle">About us</a>
             </li>
@@ -584,9 +590,9 @@
           </div>
           <ul class="process__list l-flex-col">
             <li
-              class="process__item process__item--open card"
+              class="process__item process__item--open card js-process-item"
               data-name="item-one"
-              aria-expanded="false"
+              aria-expanded="true"
             >
               <div class="process__panel l-flex-ac">
                 <div class="l-flex-ac process__title-block">
@@ -611,7 +617,7 @@
               </div>
             </li>
             <li
-              class="process__item card"
+              class="process__item card js-process-item"
               data-name="item-two"
               aria-expanded="false"
             >
@@ -640,7 +646,7 @@
               </div>
             </li>
             <li
-              class="process__item card"
+              class="process__item card js-process-item"
               data-name="item-three"
               aria-expanded="false"
             >
@@ -667,7 +673,7 @@
               </div>
             </li>
             <li
-              class="process__item card"
+              class="process__item card js-process-item"
               data-name="item-four"
               aria-expanded="false"
             >
@@ -694,7 +700,7 @@
               </div>
             </li>
             <li
-              class="process__item card"
+              class="process__item card js-process-item"
               data-name="item-five"
               aria-expanded="false"
             >
@@ -721,7 +727,7 @@
               </div>
             </li>
             <li
-              class="process__item card"
+              class="process__item card js-process-item"
               data-name="item-six"
               aria-expanded="false"
             >
@@ -1247,6 +1253,9 @@
 
     <!-- Owl-Carousel  -->
     <script src="./assets/js/owl.carousel.js"></script>
+
+    <!-- Lenis scroll  -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 
     <!-- Custom JS Script  -->
     <script src="./assets/js/main.js"></script>
