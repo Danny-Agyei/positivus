@@ -28,7 +28,7 @@ $(document).ready(function () {
     const accordItemName = $(this).attr("data-target");
     const accordItem = $(`[data-name=${accordItemName}]`)[0];
 
-    $(this).click(() => {
+    $(this).click(function () {
       if ($(accordItem).hasClass(PROCESS_ITEM_OPEN_CLASS)) {
         accordItems.removeClass(PROCESS_ITEM_OPEN_CLASS);
         accordionBtns.attr("aria-expanded", false);
@@ -40,7 +40,7 @@ $(document).ready(function () {
       accordionBtns.attr("aria-expanded", false);
 
       $(accordItem).addClass(PROCESS_ITEM_OPEN_CLASS);
-      $("button", accordItem).attr("aria-expanded", true);
+      $(this).attr("aria-expanded", true);
     });
   }
 
@@ -95,12 +95,17 @@ $(document).ready(function () {
         },
         992: {
           items: 2,
-          margin: 0,
-          center: false,
+          loop: true,
+          margin: 50,
+          center: true,
+          autoWidth: true,
         },
         1400: {
           items: 2,
-          center: false,
+          center: true,
+          autoWidth: true,
+          loop: true,
+          margin: 50,
         },
       },
     },

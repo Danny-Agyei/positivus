@@ -1250,17 +1250,7 @@ p {
 }
 @media only screen and (min-width: 62em) {
   .testimonials__item {
-    max-width: 42rem;
-  }
-}
-@media only screen and (min-width: 73.4375em) {
-  .testimonials__item {
-    max-width: 52rem;
-  }
-}
-@media only screen and (min-width: 87.5em) {
-  .testimonials__item {
-    max-width: 62rem;
+    max-width: 68rem;
   }
 }
 .testimonials__content {
