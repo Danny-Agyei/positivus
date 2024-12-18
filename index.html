@@ -101,7 +101,7 @@
               >
               <a
                 href="#contact"
-                class="header__btn header__btn--mobile btn btn--primary btn--sm"
+                class="header__btn header__btn--mobile btn btn--primary btn--sm js-toggle"
               >
                 <span class="btn__slide"></span>
                 <span class="btn__text">Request a quote</span></a
@@ -592,7 +592,6 @@
             <li
               class="process__item process__item--open card js-process-item"
               data-name="item-one"
-              aria-expanded="true"
             >
               <div class="process__panel l-flex-ac">
                 <div class="l-flex-ac process__title-block">
@@ -602,11 +601,19 @@
                 <button
                   class="process__btn btn btn--outline btn--round js-accordion-toggle"
                   data-target="item-one"
+                  id="accordion-one"
+                  aria-controls="consultation"
+                  aria-expanded="true"
                 >
                   <span class="process__bar"></span>
                 </button>
               </div>
-              <div class="process__content l-flex-col">
+              <div
+                class="process__content l-flex-col"
+                role="region"
+                aria-labelledby="accordion-one"
+                id="consultation"
+              >
                 <hr class="u-seperator" />
                 <p>
                   During the initial consultation, we will discuss your business
@@ -616,11 +623,7 @@
                 </p>
               </div>
             </li>
-            <li
-              class="process__item card js-process-item"
-              data-name="item-two"
-              aria-expanded="false"
-            >
+            <li class="process__item card js-process-item" data-name="item-two">
               <div class="process__panel l-flex-ac">
                 <div class="l-flex-ac process__title-block">
                   <h3 class="process__number">02</h3>
@@ -631,11 +634,19 @@
                 <button
                   class="process__btn btn btn--outline btn--round js-accordion-toggle"
                   data-target="item-two"
+                  id="accordion-two"
+                  aria-controls="research"
+                  aria-expanded="false"
                 >
                   <span class="process__bar"></span>
                 </button>
               </div>
-              <div class="process__content l-flex-col">
+              <div
+                class="process__content l-flex-col"
+                role="region"
+                aria-labelledby="accordion-two"
+                id="research"
+              >
                 <hr class="u-seperator" />
                 <p>
                   During the initial consultation, we will discuss your business
@@ -648,7 +659,6 @@
             <li
               class="process__item card js-process-item"
               data-name="item-three"
-              aria-expanded="false"
             >
               <div class="process__panel l-flex-ac">
                 <div class="l-flex-ac process__title-block">
@@ -658,11 +668,19 @@
                 <button
                   class="process__btn btn btn--outline btn--round js-accordion-toggle"
                   data-target="item-three"
+                  id="accordion-three"
+                  aria-controls="implementation"
+                  aria-expanded="false"
                 >
                   <span class="process__bar"></span>
                 </button>
               </div>
-              <div class="process__content l-flex-col">
+              <div
+                class="process__content l-flex-col"
+                role="region"
+                aria-labelledby="accordion-three"
+                id="implementation"
+              >
                 <hr class="u-seperator" />
                 <p>
                   During the initial consultation, we will discuss your business
@@ -675,7 +693,6 @@
             <li
               class="process__item card js-process-item"
               data-name="item-four"
-              aria-expanded="false"
             >
               <div class="process__panel l-flex-ac">
                 <div class="l-flex-ac process__title-block">
@@ -685,11 +702,19 @@
                 <button
                   class="process__btn btn btn--outline btn--round js-accordion-toggle"
                   data-target="item-four"
+                  id="accordion-four"
+                  aria-controls="optimization"
+                  aria-expanded="false"
                 >
                   <span class="process__bar"></span>
                 </button>
               </div>
-              <div class="process__content l-flex-col">
+              <div
+                class="process__content l-flex-col"
+                role="region"
+                aria-labelledby="accordion-four"
+                id="optimization"
+              >
                 <hr class="u-seperator" />
                 <p>
                   During the initial consultation, we will discuss your business
@@ -702,7 +727,6 @@
             <li
               class="process__item card js-process-item"
               data-name="item-five"
-              aria-expanded="false"
             >
               <div class="process__panel l-flex-ac">
                 <div class="l-flex-ac process__title-block">
@@ -712,11 +736,19 @@
                 <button
                   class="process__btn btn btn--outline btn--round js-accordion-toggle"
                   data-target="item-five"
+                  id="accordion-five"
+                  aria-controls="reporting"
+                  aria-expanded="false"
                 >
                   <span class="process__bar"></span>
                 </button>
               </div>
-              <div class="process__content l-flex-col">
+              <div
+                class="process__content l-flex-col"
+                role="region"
+                aria-labelledby="accordion-five"
+                id="reporting"
+              >
                 <hr class="u-seperator" />
                 <p>
                   During the initial consultation, we will discuss your business
@@ -726,11 +758,7 @@
                 </p>
               </div>
             </li>
-            <li
-              class="process__item card js-process-item"
-              data-name="item-six"
-              aria-expanded="false"
-            >
+            <li class="process__item card js-process-item" data-name="item-six">
               <div class="process__panel l-flex-ac">
                 <div class="l-flex-ac process__title-block">
                   <h3 class="process__number">06</h3>
@@ -739,11 +767,19 @@
                 <button
                   class="process__btn btn btn--outline btn--round js-accordion-toggle"
                   data-target="item-six"
+                  id="accordion-six"
+                  aria-controls="improvement"
+                  aria-expanded="false"
                 >
                   <span class="process__bar"></span>
                 </button>
               </div>
-              <div class="process__content l-flex-col">
+              <div
+                class="process__content l-flex-col"
+                role="region"
+                aria-labelledby="accordion-six"
+                id="improvement"
+              >
                 <hr class="u-seperator" />
                 <p>
                   During the initial consultation, we will discuss your business

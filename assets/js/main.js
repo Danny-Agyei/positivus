@@ -2,7 +2,7 @@ $(document).ready(function () {
   const navToggleBtn = $(".js-toggle");
   const accordionBtns = $(".js-accordion-toggle");
   const navbar = $(".js-nav");
-  const processItems = $(".js-process-item");
+  const accordItems = $(".js-process-item");
   const allSliders = $(".js-slider");
   const caseSlider = $(".js-case-slider");
   const testOwl = $(".js-testimonials-slider");
@@ -25,22 +25,22 @@ $(document).ready(function () {
   accordionBtns.each(handleAccordionToggle);
 
   function handleAccordionToggle() {
-    const targetName = $(this).attr("data-target");
-    const targetElem = $(`[data-name=${targetName}]`)[0];
+    const accordItemName = $(this).attr("data-target");
+    const accordItem = $(`[data-name=${accordItemName}]`)[0];
 
     $(this).click(() => {
-      if ($(targetElem).hasClass(PROCESS_ITEM_OPEN_CLASS)) {
-        processItems.removeClass(PROCESS_ITEM_OPEN_CLASS);
-        processItems.attr("aria-expanded", false);
+      if ($(accordItem).hasClass(PROCESS_ITEM_OPEN_CLASS)) {
+        accordItems.removeClass(PROCESS_ITEM_OPEN_CLASS);
+        accordionBtns.attr("aria-expanded", false);
 
         return;
       }
 
-      processItems.removeClass(PROCESS_ITEM_OPEN_CLASS);
-      processItems.attr("aria-expanded", false);
+      accordItems.removeClass(PROCESS_ITEM_OPEN_CLASS);
+      accordionBtns.attr("aria-expanded", false);
 
-      $(targetElem).addClass(PROCESS_ITEM_OPEN_CLASS);
-      $(targetElem).attr("aria-expanded", true);
+      $(accordItem).addClass(PROCESS_ITEM_OPEN_CLASS);
+      $("button", accordItem).attr("aria-expanded", true);
     });
   }
 
@@ -111,23 +111,23 @@ $(document).ready(function () {
   startCarousel();
 
   function startCarousel() {
-    const screenWidth = $(window).width();
+    const deviceScreenSize = $(window).width();
 
     [...allSliders].forEach((elem) => {
       const sectionName = $(elem).attr("data-name");
-      let availableCarousel = { ...options[sectionName] };
+      let activeCarouselOptions = { ...options[sectionName] };
 
       // Disable Case carousel on large screen
-      if (screenWidth > 990 && caseSlider.hasClass("owl-carousel")) {
+      if (deviceScreenSize > 990 && caseSlider.hasClass("owl-carousel")) {
         caseSlider.trigger("destroy.owl.carousel");
-        availableCarousel = { ...options["testimonials"] };
+        activeCarouselOptions = { ...options["testimonials"] };
       }
 
       $(elem).owlCarousel({
         items: 1,
         autoHeight: true,
         autoplayHoverPause: true,
-        ...availableCarousel,
+        ...activeCarouselOptions,
       });
     });
   }
