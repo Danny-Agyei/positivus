@@ -3,8 +3,8 @@ $(document).ready(function () {
   const accordionBtns = $(".js-accordion-toggle");
   const navbar = $(".js-nav");
   const accordItems = $(".js-process-item");
-  const allSliders = $(".js-slider");
-  const caseSlider = $(".js-case-slider");
+  const allCarousel = $(".js-slider");
+  const caseCarousel = $(".js-case-slider");
   const testOwl = $(".js-testimonials-slider");
   const testOwlDot = $(".js-testimonails-dot");
 
@@ -118,13 +118,13 @@ $(document).ready(function () {
   function startCarousel() {
     const deviceScreenSize = $(window).width();
 
-    [...allSliders].forEach((elem) => {
+    [...allCarousel].forEach((elem) => {
       const sectionName = $(elem).attr("data-name");
       let activeCarouselOptions = { ...options[sectionName] };
 
       // Disable Case carousel on large screen
-      if (deviceScreenSize > 990 && caseSlider.hasClass("owl-carousel")) {
-        caseSlider.trigger("destroy.owl.carousel");
+      if (deviceScreenSize > 990 && caseCarousel.hasClass("owl-carousel")) {
+        caseCarousel.trigger("destroy.owl.carousel");
         activeCarouselOptions = { ...options["testimonials"] };
       }
 
@@ -153,7 +153,7 @@ $(document).ready(function () {
     });
   });
 
-  // Initialize Lenis
+  // Initialize Lenis scroll
   const lenis = new Lenis({
     autoRaf: true,
   });

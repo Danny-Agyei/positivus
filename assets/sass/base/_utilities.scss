@@ -9,8 +9,8 @@
   background-color: $color-bg-secondary;
   @include prefix(border-radius, $radius-sm, webkit moz);
   font-size: var(--fs-h2);
-  width: max-content;
   margin-inline: auto;
+  width: max-content;
 }
 
 .u-heading-sm {

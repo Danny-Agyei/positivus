@@ -10,8 +10,8 @@
   @include prefix(transition, all $transition-ease-2, moz webkit);
 
   &__text {
-    z-index: 2;
     @include prefix(transition, color $transition-ease-2, moz webkit);
+    z-index: 2;
   }
 
   &__slide {
@@ -20,16 +20,16 @@
     left: 0;
     position: absolute;
     transform: translateX(-101%);
-    width: 100%;
     @include prefix(transition, transform $transition-ease-2, moz webkit);
+    width: 100%;
     z-index: 1;
   }
 
   @include buttonColorVariants;
 
   &--sm {
-    padding: $space-x5 $space-x9;
     @include prefix(border-radius, $radius-md, moz webkit);
+    padding: $space-x5 $space-x9;
   }
 
   &--link {

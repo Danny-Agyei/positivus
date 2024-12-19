@@ -17,27 +17,27 @@
 }
 
 .l-flex-col-center {
+    align-items: center;
     @extend .l-flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 
 .l-flex-ac {
-    @extend .l-flex;
     align-items: center;
+    @extend .l-flex;
 }
 
 .l-flex-jb {
+    align-items: center;
     @extend .l-flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .l-flex-jb-center {
+    align-items: center;
     @extend .l-flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 

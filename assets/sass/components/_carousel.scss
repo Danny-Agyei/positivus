@@ -22,15 +22,15 @@
 .testimonials {
 
     &__carousel {
-        position: static;
         padding-block-end: $space-x16;
+        position: static;
 
 
         .owl-nav {
+            bottom: 5.2rem;
+            left: 0;
             position: absolute;
             right: 0;
-            left: 0;
-            bottom: 5.2rem;
             z-index: 1;
 
             @include breakpoint(tablet-portrait) {
@@ -56,19 +56,18 @@
             }
 
             button.owl-next {
-                transform: translateX(110px);
+                transform: translateX(11rem);
 
                 @include breakpoint(tablet-portrait) {
-
-                    transform: translateX(200px);
+                    transform: translateX(20rem);
                 }
             }
 
             button.owl-prev {
-                transform: translateX(-110px);
+                transform: translateX(-11rem);
 
                 @include breakpoint(tablet-portrait) {
-                    transform: translateX(-200px);
+                    transform: translateX(-20rem);
                 }
             }
         }

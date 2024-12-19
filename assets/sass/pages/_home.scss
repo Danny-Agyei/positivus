@@ -12,14 +12,14 @@
         }
 
         @include breakpoint(tablet-landscape) {
-            padding-block: $space-x18;
+            align-items: center;
+            gap: 0 $space-x15;
+            grid-template-columns: 1fr 1fr;
             grid-template-areas:
                 "heading banner"
                 "block banner"
             ;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 0 $space-x15;
+            padding-block: $space-x18;
         }
 
         @include breakpoint(desktop) {
@@ -35,8 +35,8 @@
     }
 
     &__btn {
-        width: 100%;
         margin-block-start: $space-x10;
+        width: 100%;
 
         @include breakpoint(tablet-landscape) {
             width: auto;
@@ -44,8 +44,8 @@
     }
 
     &__banner {
-        width: 100%;
         max-width: 70rem;
+        width: 100%;
 
         @include breakpoint(tablet-landscape) {
             grid-area: banner;
@@ -165,6 +165,12 @@
     &__item {
         min-height: 30.2rem;
         padding: $space-x12;
+        @include prefix(transition, all $transition-easeout, webkit moz);
+
+        &:hover {
+            box-shadow: 0rem 1.5rem 0rem $color-border-grey-900;
+            transform: translateY(-1rem);
+        }
 
     }
 
@@ -219,8 +225,8 @@
         padding: $space-x12;
 
         @include breakpoint(tablet-landscape) {
-            width: 50%;
             padding-inline: 0;
+            width: 50%;
         }
     }
 
@@ -290,8 +296,8 @@
 
     &__item {
         background-color: $color-bg-primary;
-        color: $color-text-light;
         @include prefix(border-radius, $radius-lg, webkit moz);
+        color: $color-text-light;
         margin-inline: $space-x5;
         padding: $space-x10 $space-x12;
 
@@ -384,11 +390,11 @@
 
     &__content {
         height: 0rem;
-        opacity: 0;
         gap: 0;
+        opacity: 0;
+        overflow: hidden;
         padding-block: 0;
         @include prefix(transition, all $transition-ease-2, webkit moz);
-        overflow: hidden;
     }
 
     &__number {
@@ -475,22 +481,19 @@
         cursor: auto;
         gap: $space-x5;
         padding: $space-x10 $space-x9;
-        @include prefix(transition, all 0.2s ease-out, moz webkit);
+        @include prefix(transition, all $transition-easeout, moz webkit);
 
         &:hover {
             background-color: $color-bg-secondary;
+            box-shadow: 0rem 1.5rem 0rem $color-border-grey-900;
+            transform: translateY(-1rem);
         }
 
         @include breakpoint(tablet-portrait) {
             padding: $space-x10 $space-x6;
         }
 
-        @include breakpoint(tablet-landscape) {
-            &:hover {
-                transform: scale(1.05);
-                box-shadow: 0rem 1.5rem 0rem $color-border-grey-900;
-            }
-        }
+
     }
 
     &__about {
@@ -518,8 +521,8 @@
         width: 100%;
 
         @include breakpoint(tablet-portrait) {
-            max-width: 25rem;
             align-self: flex-end;
+            max-width: 25rem;
         }
     }
 }
@@ -562,9 +565,9 @@
 
     &__content {
         border: 0.1rem solid $color-bg-secondary;
+        @include prefix(border-radius, $radius-lg, webkit moz);
         color: $color-text-light;
         font-size: var(--fs-body-sm);
-        @include prefix(border-radius, $radius-lg, webkit moz);
         padding: $space-x8;
         position: relative;
 
@@ -573,7 +576,6 @@
         }
 
         &::after {
-
             background-color: #191A23;
             bottom: -0.8rem;
             border: 0.1rem solid #B9FF66;
@@ -600,10 +602,10 @@
     &__btn-group {
         gap: $space-x5;
         margin-block-start: $space-x8;
+        margin-inline: auto;
+        max-width: 15rem;
         position: relative;
         z-index: 2;
-        max-width: 15rem;
-        margin-inline: auto;
     }
 
 }
@@ -625,9 +627,9 @@
         @include breakpoint(tablet-landscape) {
             justify-content: space-between;
             gap: $space-x35;
+            max-width: 100%;
             padding-inline-start: $space-x25;
             padding-block: $space-x16 $space-x10;
-            max-width: 100%;
         }
 
     }
@@ -638,7 +640,10 @@
         }
 
         &-wrapper {
-            padding: $space-x10;
+
+            @include breakpoint(mobile) {
+                padding: $space-x10;
+            }
 
             @include breakpoint(tablet-landscape) {
                 padding-inline: 0;

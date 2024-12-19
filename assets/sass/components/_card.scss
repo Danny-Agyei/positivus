@@ -2,8 +2,8 @@
 
 .card {
     border: $border-standard;
-    box-shadow: $shadow-standard;
     @include prefix(border-radius, $radius-lg, webkit moz);
+    box-shadow: $shadow-standard;
 
     &--primary {
         background-color: $color-bg-primary;

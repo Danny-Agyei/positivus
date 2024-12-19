@@ -20,8 +20,8 @@
                 border: $border-standard;
                 @include prefix(border-radius, $radius-circle, webkit moz);
                 content: "";
-                height: 2.8rem;
                 display: inline-block;
+                height: 2.8rem;
                 width: 2.8rem;
             }
 
@@ -31,9 +31,9 @@
                 display: inline-block;
                 height: 1.6rem;
                 left: 0.6rem;
-                width: 1.6rem;
                 position: absolute;
                 top: 0.6rem;
+                width: 1.6rem;
             }
         }
 
@@ -62,9 +62,9 @@
         }
 
         &--text {
-            width: 100%;
             height: 100%;
             padding-block: $space-x5;
+            width: 100%;
         }
     }
 
