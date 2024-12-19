@@ -25,10 +25,7 @@
       property="og:description"
       content="Our digital marketing agency helps businesses grow and succeed online through a range of services including SEO, PPC, social media marketing, and content creation."
     />
-    <meta
-      property="og:image"
-      content="https://positivus-vert.vercel.app/assets/images/hero-banner.png"
-    />
+    <meta property="og:image" content="./assets/images/hero-banner.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -41,24 +38,7 @@
       property="twitter:description"
       content="Our digital marketing agency helps businesses grow and succeed online through a range of services including SEO, PPC, social media marketing, and content creation."
     />
-    <meta
-      property="twitter:image"
-      content="https://positivus-vert.vercel.app/assets/images/hero-banner.png"
-    />
-
-    <!-- Google fonts  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..600&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Lenis smooth scroll stylesheet  -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/lenis@1.1.18/dist/lenis.css"
-    />
+    <meta property="twitter:image" content="./assets/images/hero-banner.png" />
 
     <!--  Favicon -->
     <link
@@ -67,7 +47,7 @@
       href="./assets/images/apple-touch-icon.png"
     />
     <link
-      rel="icon"
+      rel="shortcut icon"
       type="image/png"
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
@@ -80,6 +60,14 @@
     />
     <link rel="manifest" href="./assets/images/site.webmanifest" />
 
+    <!-- Google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..600&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Fontsawesome Icons  -->
     <link
       rel="stylesheet"
@@ -90,8 +78,26 @@
     />
 
     <!-- Owl-carousel  -->
-    <link rel="stylesheet" href="/assets/css/owl.carousel.css" />
-    <link rel="stylesheet" href="/assets/css/owl.theme.default.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Lenis smooth scroll stylesheet  -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.1.18/dist/lenis.css"
+    />
 
     <!-- Custom stylesheet  -->
     <link rel="stylesheet" href="./assets/css/style.css" />
@@ -155,16 +161,33 @@
 
     <main>
       <!-- Hero section  -->
-      <section class="hero">
+      <section id="home" class="hero">
         <div class="hero__container l-container l-grid">
           <h1 class="u-heading-lg hero__heading">
             Navigating the digital landscape for success
           </h1>
-          <img
-            src="./assets/images/hero-banner.png"
-            alt=""
-            class="hero__banner"
-          />
+          <picture class="hero__banner">
+            <!-- WebP version for mobile -->
+            <source
+              srcset="./assets/images/hero-banner-mobile.webp"
+              type="image/webp"
+              media="(max-width:575px)"
+            />
+
+            <!-- WebP version for desktop -->
+            <source
+              srcset="./assets/images/hero-banner.webp"
+              type="image/webp"
+              media="(min-width:576px)"
+            />
+            <img
+              src="./assets/images/hero-banner.png"
+              alt="Illustration of a megaphone with share, location, and heart icons, representing digital marketing services like SEO, PPC, social media, and content creation."
+              width="360"
+              height="360"
+              class="hero__img"
+            />
+          </picture>
           <div class="hero__text-block">
             <p>
               Our digital marketing agency helps businesses grow and succeed
@@ -180,7 +203,7 @@
       </section>
 
       <!-- Companies section  -->
-      <section class="companies">
+      <section id="companies" class="companies">
         <div class="companies__container l-container-companies">
           <ul class="companies__list l-flex-col">
             <li class="l-flex companies__item">
@@ -551,6 +574,8 @@
               src="./assets/images/proposal.png"
               alt=""
               class="proposal__img"
+              width="350"
+              height="350"
             />
           </div>
         </div>
@@ -1242,89 +1267,94 @@
           </div>
         </div>
       </section>
+    </main>
 
-      <!-- Footer section  -->
-      <footer class="footer" id="footer">
-        <div class="footer__container l-container">
-          <div class="footer__wrapper l-grid-col-1">
-            <a href="#">
-              <img
-                src="./assets/images/Logo-light.png"
-                alt="Positivus home"
-                class="logo footer__logo"
-                width="150"
-                height="150"
-              />
+    <!-- Footer section  -->
+    <footer class="footer" id="footer">
+      <div class="footer__container l-container">
+        <div class="footer__wrapper l-grid-col-1">
+          <a href="#">
+            <img
+              src="./assets/images/Logo-light.png"
+              alt="Positivus home"
+              class="logo footer__logo"
+              width="150"
+              height="150"
+            />
+          </a>
+          <nav class="footer__nav" aria-label="page">
+            <ul class="footer__list l-flex-col">
+              <li class="footer__item">
+                <a href="#" class="footer__link">About us</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Services</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Use Cases</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Pricing</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="footer__nav-social" aria-label="social">
+            <a href="#" class="btn btn--round footer__brand">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
             </a>
-            <nav class="footer__nav" aria-label="page">
-              <ul class="footer__list l-flex-col">
-                <li class="footer__item">
-                  <a href="#" class="footer__link">About us</a>
-                </li>
-                <li class="footer__item">
-                  <a href="#" class="footer__link">Services</a>
-                </li>
-                <li class="footer__item">
-                  <a href="#" class="footer__link">Use Cases</a>
-                </li>
-                <li class="footer__item">
-                  <a href="#" class="footer__link">Pricing</a>
-                </li>
-              </ul>
-            </nav>
-            <nav class="footer__nav-social" aria-label="social">
-              <a href="#" class="btn btn--round footer__brand">
-                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
-              </a>
-              <a href="#" class="btn btn--round footer__brand">
-                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
-              </a>
-              <a href="#" class="btn btn--round footer__brand">
-                <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-              </a>
-            </nav>
-            <div class="footer__info l-flex-col">
-              <p class="footer__tag u-heading-sm">Contact us:</p>
-              <a class="footer__info-link" href="mailto:info@positivus.com"
-                >Email: info@positivus.com</a
-              >
-              <a class="footer__contact" href="tel:555-567-8901"
-                >Phone: 555-567-8901</a
-              >
-              <p>
-                Address: 1234 Main St<br />Moonstone City, Stardust State 12345
-              </p>
+            <a href="#" class="btn btn--round footer__brand">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="btn btn--round footer__brand">
+              <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+            </a>
+          </nav>
+          <div class="footer__info l-flex-col">
+            <p class="footer__tag u-heading-sm">Contact us:</p>
+            <a class="footer__info-link" href="mailto:info@positivus.com"
+              >Email: info@positivus.com</a
+            >
+            <a class="footer__contact" href="tel:555-567-8901"
+              >Phone: 555-567-8901</a
+            >
+            <p>
+              Address: 1234 Main St<br />Moonstone City, Stardust State 12345
+            </p>
+          </div>
+          <form class="form footer__form">
+            <div class="form__group--row footer__group l-flex-col">
+              <input
+                type="email"
+                class="form__control footer__control"
+                placeholder="Email"
+              />
+              <button class="footer__btn btn btn--secondary btn--sm">
+                <span class="btn__slide"></span>
+                <span class="btn__text">Subscribe to news</span>
+              </button>
             </div>
-            <form class="form footer__form">
-              <div class="form__group--row footer__group l-flex-col">
-                <input
-                  type="email"
-                  class="form__control footer__control"
-                  placeholder="Email"
-                />
-                <button class="footer__btn btn btn--secondary btn--sm">
-                  <span class="btn__slide"></span>
-                  <span class="btn__text">Subscribe to news</span>
-                </button>
-              </div>
-            </form>
-            <div class="footer__tc l-flex-col-center">
-              <hr class="u-seperator footer__seperator" />
-              <div class="footer__copy l-flex-col">
-                <p>© 2023 Positivus. All Rights Reserved.</p>
-                <a href="#" class="footer__link">Privacy Policy</a>
-              </div>
+          </form>
+          <div class="footer__tc l-flex-col-center">
+            <hr class="u-seperator footer__seperator" />
+            <div class="footer__copy l-flex-col">
+              <p>© 2023 Positivus. All Rights Reserved.</p>
+              <a href="#" class="footer__link">Privacy Policy</a>
             </div>
           </div>
         </div>
-      </footer>
-    </main>
+      </div>
+    </footer>
 
     <!-- jQuery  -->
     <script src="./assets/js/jquery-3.7.1.min.js"></script>
 
     <!-- Owl-Carousel  -->
-    <script src="./assets/js/owl.carousel.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <!-- Lenis scroll  -->
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
